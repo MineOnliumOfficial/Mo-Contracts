@@ -48,8 +48,8 @@ export default function ExampleUI({
           <h1>Support MineOnlium! </h1>
           <p>
             <h3>
-              Donations are curently only avalible on the Polygon blockchain via MATIC. Supporters will recieve several
-              gifts and rewards for their support:
+              Donations are currently only available on the Polygon blockchain via MATIC. Supporters will receive
+              several gifts and rewards for their support:
             </h3>
             <div style={{ padding: 4, margin: 8, border: "1px solid #cccccc" }}>
               <ul
@@ -64,7 +64,7 @@ export default function ExampleUI({
                 }}
               >
                 <li>A Shoutout on the MineOnlium Discord Server </li>
-                <li>1 MO-Token on Polygon (per 1 MATIC donated) </li>
+                <li>1 WMO on Polygon (per 1 MATIC donated) </li>
                 <li>1 MO on MineOnlium (per 1 MATIC donated) </li>
                 <li>1 MSTR Token on MineOnlium (1 per donation address) </li>
               </ul>
