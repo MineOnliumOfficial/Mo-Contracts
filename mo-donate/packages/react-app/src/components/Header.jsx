@@ -25,6 +25,6 @@ export default function Header({ link, title, subTitle, ...props }) {
 
 Header.defaultProps = {
   link: "https://github.com/mineonliumoffical",
-  title: "MineOnlium ICO",
-  subTitle: "Become an intial supporter of the MineOnlium project!",
+  title: "Mo-Donate Contract Interface",
+  subTitle: "Become an intial supporter of the MineOnlium project",
 };

@@ -1,4 +1,4 @@
-import { Button, Divider, Input, Progress } from "antd";
+import { Button, Divider, Input } from "antd";
 import React, { useState } from "react";
 import axios from "axios";
 var Web3 = require("web3");
@@ -6,22 +6,32 @@ var Web3 = require("web3");
 export default function ExampleUI({
   _totalSupply,
   address,
-  mainnetProvider,
-  localProvider,
-  yourLocalBalance,
-  price,
+  // mainnetProvider,
+  // localProvider,
+  // yourLocalBalance,
+  // price,
   tx,
-  readContracts,
+  // readContracts,
   writeContracts,
 }) {
   const [amount, setAmount] = useState(0);
 
   const discordEndpoint =
-    "https://discord.com/api/webhooks/1005312867534381138/HCSbdpiDO8ThIjHsTD_ZO0unDe_4JA3qNyds8X6TtVisqxOIkoebF7f_HCKD_P4WW1W1";
+    "";
 
   function postNewEntryToDiscord() {
     axios.post(discordEndpoint, {
-      content: "A new entry has been purchased by: " + address,
+      content:
+        "A donation has appeared! From: " +
+        address +
+        " In the ammount of:  " +
+        amount +
+        " MATIC" +
+        "!" +
+        " Total amount raised: " +
+        _totalSupply +
+        " MATIC" +
+        "!",
     });
   }
 
@@ -33,42 +43,76 @@ export default function ExampleUI({
       <div style={{ border: "1px solid #cccccc", padding: 16, width: 400, margin: "auto", marginTop: 64 }}>
         <h2>MineOnlium Donation Contract:</h2>
         <Divider />
-        <div style={{ margin: 8 }}>
-          <Input
-            onChange={e => {
-              setAmount(e.target.value);
-            }}
-          />
-          <Button
-            onClick={async () => {
-              const result = tx(
-                writeContracts.YourContract.buy({
-                  value: Web3.utils.toWei(amount, "ether"),
-                  nonce: 0,
-                }),
-                update => {
-                  console.log("📡 Transaction Update:", update);
-                  if (update && (update.status === "confirmed" || update.status === 1)) {
-                    postNewEntryToDiscord();
-                    console.log(" 🍾 Transaction " + update.hash + " finished!");
-                    console.log(
-                      " ⛽️ " +
-                        update.gasUsed +
-                        "/" +
-                        (update.gasLimit || update.gas) +
-                        " @ " +
-                        parseFloat(update.gasPrice) / 1000000000 +
-                        " gwei",
-                    );
-                  }
-                },
-              );
-              console.log("awaiting metamask/web3 confirm result...", result);
-              console.log(await result);
-            }}
-          >
-            Buy Now
-          </Button>
+        <Divider />
+        <div style={{ padding: 4, margin: 8, border: "1px solid #cccccc" }}>
+          <h1>Support MineOnlium! </h1>
+          <p>
+            <h3>
+              Donations are curently only avalible on the Polygon blockchain via MATIC. Supporters will recieve several
+              gifts and rewards for their support:
+            </h3>
+            <div style={{ padding: 4, margin: 8, border: "1px solid #cccccc" }}>
+              <ul
+                style={{
+                  listStyleType: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  justifyContent: "space-around",
+                }}
+              >
+                <li>A Shoutout on the MineOnlium Discord Server </li>
+                <li>1 MO-Token on Polygon (per 1 MATIC donated) </li>
+                <li>1 MO on MineOnlium (per 1 MATIC donated) </li>
+                <li>1 MSTR Token on MineOnlium (1 per donation address) </li>
+              </ul>
+            </div>
+          </p>
+          <p>Donations are non-refundable and will be used to fund the development of the MineOnlium project. </p>
+        </div>
+        <div style={{ padding: 4, margin: 8, border: "1px solid #cccccc" }}>
+          <h3>Donate:</h3>
+          <div style={{ margin: 8 }}>
+            <Input
+              onChange={e => {
+                setAmount(e.target.value);
+              }}
+            />
+          </div>
+          <div style={{ padding: 4, margin: 8, border: "1px solid #cccccc" }}>
+            <Button
+              onClick={async () => {
+                const result = tx(
+                  writeContracts.YourContract.buy({
+                    value: Web3.utils.toWei(amount, "ether"),
+                    nonce: 0,
+                  }),
+                  update => {
+                    console.log("📡 Transaction Update:", update);
+                    if (update && (update.status === "confirmed" || update.status === 1)) {
+                      postNewEntryToDiscord();
+                      console.log(" 🍾 Transaction " + update.hash + " finished!");
+                      console.log(
+                        " ⛽️ " +
+                          update.gasUsed +
+                          "/" +
+                          (update.gasLimit || update.gas) +
+                          " @ " +
+                          parseFloat(update.gasPrice) / 1000000000 +
+                          " gwei",
+                      );
+                    }
+                  },
+                );
+                console.log("awaiting metamask/web3 confirm result...", result);
+                console.log(await result);
+              }}
+            >
+              Donate
+            </Button>
+          </div>
         </div>
       </div>
     </div>

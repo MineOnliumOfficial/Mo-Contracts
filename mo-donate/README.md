@@ -1,4 +1,8 @@
 # MO-Donate
+
+
+## Dev 
+
 ```
 yarn install
 yarn chain
@@ -11,3 +15,10 @@ yarn deploy
 ```
 yarn start
 ```
+
+## Build
+```
+yarn build
+```
+
+Move  static assets found in `mo-donate/packages/react-app/build` to `/mo-donate/packages

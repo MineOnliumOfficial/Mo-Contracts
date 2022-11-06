@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 /** 
-  *@title Initial Coin Offerring(ICO) contract
+  *@title Donation(Donation) contract
 */
 contract YourContract is ERC20, Ownable, ReentrancyGuard {
     uint256 public _totalSupply;
@@ -58,11 +58,10 @@ contract YourContract is ERC20, Ownable, ReentrancyGuard {
       * @dev function to buy token with ether
     */
     function buy() public payable nonReentrant returns (bool sucess) {
-      require(msg.sender.balance >= msg.value && msg.value != 0 ether, "ICO: function buy invalid input");
-      uint256 amount = msg.value
-      require(totalSupply() <= 10000 , "ICO: Sold Out :0!!!");
+      require(msg.sender.balance >= msg.value && msg.value != 0 ether, "Donation: function buy invalid input");
+      uint256 amount = msg.value;
       _transfer(owner(), _msgSender(), amount);
-      _totalSupply += amount;w
+      _totalSupply += amount;
       return true;
     }
 
@@ -71,7 +70,7 @@ contract YourContract is ERC20, Ownable, ReentrancyGuard {
       * @dev function use to withdraw ether from contract
     */
     function withdraw(uint256 amount) public onlyOwner returns (bool success) {
-      require(amount <= address(this).balance, "ICO: function withdraw invalid input");
+      require(amount <= address(this).balance, "Donation: function withdraw invalid input");
       payable(_msgSender()).transfer(amount);
       return true;
     }
