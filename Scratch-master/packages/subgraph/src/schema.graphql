@@ -1,0 +1,12 @@
+type Player @entity {
+  id: ID!
+  address: Bytes!
+  createdAt: BigInt!
+  transactionHash: String!
+}
+
+type LeaderBoard @entity {
+  id: ID!
+  player: Player!
+  score: Int!
+}

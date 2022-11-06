@@ -1,0 +1,3 @@
+// TODO: Populate a proper readme... 
+
+Scratch is a decentralized raffle app 
