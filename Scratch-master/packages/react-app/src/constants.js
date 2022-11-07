@@ -26,7 +26,7 @@ export const NETWORKS = {
     color: "#666666",
     chainId: 54321,
     blockExplorer: "https://mo-scout.com",
-    rpcUrl: "http://34.87.231.138:8545",
+    rpcUrl: "http://rpc.mo-scout.com ",
   },
   mainnet: {
     name: "mainnet",

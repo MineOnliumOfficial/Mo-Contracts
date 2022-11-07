@@ -1,4 +1,4 @@
-import { Checkbox, Divider } from "antd";
+import { box, Divider } from "antd";
 import React, { useState, useEffect } from "react";
 import { utils } from "ethers";
 import { Button, Card, CardHeader, CardText, CardTitle, Col, Row } from "reactstrap";
@@ -11,7 +11,7 @@ import { StakedView, Leaderboard, Playerlist, Wallet } from "../components";
 var Web3 = require("web3");
 
 const discordEndpoint =
-  "https://discordapp.com/api/webhooks/1038933583701745756/d-SngM4P-JztylzInR86MLeK67mzdNJ_HVfwMeRfJiva4WkNypr0kTmFiIXXEytWxoTF";
+  "";
 
 export default function ExampleUI({
   address,

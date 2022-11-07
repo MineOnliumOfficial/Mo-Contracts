@@ -84,7 +84,7 @@ module.exports = {
     },
     mineonlium: {
       name: "mineonlium",
-      url: "http://34.87.231.138:8545",
+      url: "http://rpc.mo-scout.com ",
       accounts: {
         mnemonic: mnemonic(),
       },
