@@ -21,17 +21,7 @@ export default function ExampleUI({
 
   function postNewEntryToDiscord() {
     axios.post(discordEndpoint, {
-      content:
-        "A donation has appeared! From: " +
-        address +
-        " In the ammount of:  " +
-        amount +
-        " MATIC" +
-        "!" +
-        " Total amount raised: " +
-        _totalSupply +
-        " MATIC" +
-        "!",
+      content: "A donation has appeared! From: " + address + " In the ammount of:  " + amount + " MATIC!",
     });
   }
 

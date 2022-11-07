@@ -22,3 +22,4 @@ yarn build
 ```
 
 Move  static assets found in `mo-donate/packages/react-app/build` to `/mo-donate/packages
+export NODE_OPTIONS=--max-old-space-size=4096
