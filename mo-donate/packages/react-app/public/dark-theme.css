@@ -691,6 +691,10 @@ body {
   font-variant: tabular-nums;
   line-height: 1.5715;
   background-color: #212121;
+  background-image: url("backgroud_dark.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   font-feature-settings: "tnum";
 }
 [tabindex="-1"]:focus {

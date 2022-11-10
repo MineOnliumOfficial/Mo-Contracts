@@ -7,14 +7,14 @@ const { Title, Text } = Typography;
 
 export default function Header({ link, title, subTitle, ...props }) {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between", padding: "1.2rem" }}>
-      <div style={{ display: "flex", flexDirection: "column", flex: 1, alignItems: "start" }}>
+    <div style={{  justifyContent: "space-between", padding: "1.2rem" }}>
+      <div style={{   }}>
         <a href={link} target="_blank" rel="noopener noreferrer">
-          <Title level={4} style={{ margin: "0 0.5rem 0 0" }}>
+          <Title level={4} style={{ fontSize: "40px", margin: "1.5rem 0.5rem 0 0" }}>
             {title}
           </Title>
         </a>
-        <Text type="secondary" style={{ textAlign: "left" }}>
+        <Text type="secondary" style={{ fontSize: "2px", textAlign: "center" }}>
           {subTitle}
         </Text>
       </div>
@@ -24,7 +24,7 @@ export default function Header({ link, title, subTitle, ...props }) {
 }
 
 Header.defaultProps = {
-  link: "https://github.com/mineonliumoffical",
-  title: "Mo-Donate Contract Interface",
-  subTitle: "Become an intial supporter of the MineOnlium project",
+  link: "https://github.com/MineOnliumOfficial",
+  title: "MineOnlium Donation Contract",
+  subTitle: "",
 };
