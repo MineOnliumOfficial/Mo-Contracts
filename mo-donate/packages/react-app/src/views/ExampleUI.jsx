@@ -26,31 +26,33 @@ export default function ExampleUI({
   }
 
   return (
-    <div>
+    <div >
       {/*
         ⚙️ Here is an example UI that displays and sets the purpose in your smart contract:
       */}
-      <div style={{ border: "1px solid #cccccc", padding: 16, width: 400, margin: "auto", marginTop: 64 }}>
-        <h2>MineOnlium Donation Contract:</h2>
-        <Divider />
-        <Divider />
+      <div style={{ border: "no", padding: 0, width: 390, margin: "auto", marginTop: 10 }}>
+        
+        
+      {/*  <h2>MineOnlium Donation Contract:</h2>
+      */}
+       
+        
         <div style={{ padding: 4, margin: 8, border: "1px solid #cccccc" }}>
-          <h1>Support MineOnlium! </h1>
+          <h2>Support MineOnlium! </h2>
           <p>
             <h3>
               Donations are currently only available on the Polygon blockchain via MATIC. Supporters will receive
               several gifts and rewards for their support:
             </h3>
-            <div style={{ padding: 4, margin: 8, border: "1px solid #cccccc" }}>
+            <div style={{ padding: 0, margin: 4, border: "no" }}>
               <ul
                 style={{
-                  listStyleType: "none",
+                  listStyleType: "1",
+                  fontSize: "13px",
+                  textAlignLast: "left",
                   padding: 0,
-                  margin: 0,
-                  display: "flex",
-                  flexDirection: "row",
-                  flexWrap: "wrap",
-                  justifyContent: "space-around",
+                  marginLeft: 15,
+                  
                 }}
               >
                 <li>A Shoutout on the MineOnlium Discord Server </li>
@@ -71,7 +73,7 @@ export default function ExampleUI({
               }}
             />
           </div>
-          <div style={{ padding: 4, margin: 8, border: "1px solid #cccccc" }}>
+          <div style={{ padding: 4, margin: 8, border: "no" }}>
             <Button
               onClick={async () => {
                 const result = tx(

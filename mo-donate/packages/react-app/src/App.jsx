@@ -257,10 +257,10 @@ function App(props) {
   return (
     <div className="App">
       {/* ✏️ Edit the header and change the title to your project name */}
-      <Header>
-        {/* 👨‍💼 Your account is in the top right with a wallet at connect options */}
-        <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", flex: 1 }}>
+      {/*   👨‍💼 Your account is in the top right with a wallet at connect options */}
+                
+                <div>
+          <div style={{textAlign: "right", padding: "10px"}}>
             {USE_NETWORK_SELECTOR && (
               <div style={{ marginRight: 20 }}>
                 <NetworkSwitch
@@ -284,7 +284,8 @@ function App(props) {
             />
           </div>
         </div>
-      </Header>
+                  
+      
       {yourLocalBalance.lte(ethers.BigNumber.from("0")) && (
         <FaucetHint localProvider={localProvider} targetNetwork={targetNetwork} address={address} />
       )}
@@ -316,7 +317,7 @@ function App(props) {
           <Link to="/subgraph">Subgraph</Link>
         </Menu.Item>
       </Menu> */}
-
+<Header></Header>
       <Switch>
         <Route exact path="/">
           {/* pass in any web3 props to this Home component. For example, yourLocalBalance */}
@@ -404,7 +405,8 @@ function App(props) {
         </Route>
       </Switch>
 
-      <ThemeSwitch />
+            {/* выключил переключатель тем/turned off the themes switch. */}
+      {/*  <ThemeSwitch />*/}
 
       {/* 🗺 Extra UI like gas price, eth price, faucet, and support: */}
       <div style={{ position: "fixed", textAlign: "left", left: 0, bottom: 20, padding: 10 }}>
